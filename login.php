@@ -1,6 +1,9 @@
 <?php
 require('vendor/autoload.php');
-
+//get user's wishlist total
+use aitsydney\WishList;
+$wish = new WishList();
+$wish_total = $wish -> getWishListTotal();
 // create account
 use aitsydney\Account;
 if( $_SERVER['REQUEST_METHOD']=='POST' ){

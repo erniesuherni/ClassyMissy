@@ -1,6 +1,11 @@
 <?php
 require('vendor/autoload.php');
 
+//get user's wishlist total
+use aitsydney\WishList;
+$wish = new WishList();
+$wish_total = $wish -> getWishListTotal();
+
 use aitsydney\Search;
 
 if( isset($_GET['query']) ){

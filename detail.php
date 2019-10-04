@@ -3,6 +3,19 @@ require('vendor/autoload.php');
 
 use aitsydney\Navigation;
 
+//get user's wishlist total
+use aitsydney\WishList;
+$wish = new WishList();
+
+if( $_SERVER['REQUEST_METHOD'] == 'GET' && isset( $_GET['add'] ) ){
+    $product_id = $_GET['product_id'];
+    //if 'add' == 'list' means the wishlist button has been clicked
+    if( $_GET['add'] == 'list' ){
+        $add = $wish -> addItem($product_id);
+    }
+}
+$wish_total = $wish -> getWishListTotal();
+
 $nav = new Navigation();
 $navigation = $nav -> getNavigation();
 
@@ -28,6 +41,7 @@ $template = $twig -> load('detail.twig');
 
 echo $template -> render( array(
     'navigation' => $navigation,
+    'wish' => $wish_total,
     'detail' => $detail,
     'title' => $detail['product']['name']
 ) );
