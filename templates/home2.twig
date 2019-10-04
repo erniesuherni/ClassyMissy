@@ -7,7 +7,7 @@
                     <div class="carousel slide" id="product-carousel" data-ride="carousel">
                         <div class="carousel-inner">
                         {% for image in images %}
-                        {% set active = loop.index == 0 ? 'active' : '' %}
+                        {% set active = loop.index0 == 0 ? 'active' : '' %}
                             <div class="carousel-item {{active}}">
                                 <img class="w-100" src="images/promotion/{{image}}">
                             </div>
@@ -16,7 +16,6 @@
                         <ol class="carousel-indicators">
                             {% for image in images %}
                             <li data-target="#product-carousel" data-slide-to="{{loop.index0}}">
-                                <img src="images/promotion/{{image}}" class="img-fluid">
                             </li>
                             {% endfor %}
                         </ol>
@@ -29,9 +28,15 @@
                             <span class="sr-only">Next</span>
                         </a>
                     </div>
+                   
+                </div>
+            </div>
         </main>
+          <div>
+         {% include 'partials/footer.twig' %}
+        </div>
          <script>
-        // script for add and minus button in detail page
+        // script for add and minus button in  page
         $(document).ready(
             () => {
                 let qty = $('#quantity').val();
