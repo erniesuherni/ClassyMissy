@@ -37,6 +37,7 @@ $template = $twig -> load('login.twig');
 
 echo $template -> render( array(
     'login' => $login,
+    'wish' => $wish_total,
     'navigation' => $navigation,
     'title' => 'Login to your account'
 ) );
