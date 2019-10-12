@@ -20,11 +20,11 @@ $loader = new Twig_Loader_Filesystem('templates');
 $twig = new Twig_Environment($loader);
 
 //load a twig template
-$template = $twig -> load('contact.twig');
+$template = $twig -> load('delivery.twig');
 
 echo $template -> render( array(
     
-    'title' => 'Contact Us',
+    'title' => 'Delivery Policy',
     'wish' => $wish_total,
     'navigation' => $navigation,
 ) );

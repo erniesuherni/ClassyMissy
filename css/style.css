@@ -5,6 +5,7 @@
 /*FOOTER*/
 
 footer {
+    position: absolute;
     background: #FF444F;
     background: -webkit-linear-gradient(59deg, #FF444F, #FFBAD2);
     background: linear-gradient(59deg, #FF444F, #FFBAD2);
